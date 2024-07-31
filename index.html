@@ -23,6 +23,7 @@
             border-radius: 15px;
             padding: 30px;
             max-width: 400px;
+            width: 90%;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             transform: translateY(100%);
@@ -178,44 +179,76 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                max-width: 90%;
+                padding: 20px;
+            }
+            .card h1 {
+                font-size: 2em;
+            }
+            .card p {
+                font-size: 1em;
+            }
+            .logo img {
+                width: 60px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                max-width: 95%;
+                padding: 15px;
+            }
+            .card h1 {
+                font-size: 1.8em;
+            }
+            .card p {
+                font-size: 0.9em;
+            }
+            .logo img {
+                width: 50px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="floral">
-            <img src="https://example.com/floral-top-left.png" class="top-left" alt="Floral Top Left">
-            <img src="https://example.com/floral-top-right.png" class="top-right" alt="Floral Top Right">
-            <img src="https://example.com/floral-bottom-left.png" class="bottom-left" alt="Floral Bottom Left">
-            <img src="https://example.com/floral-bottom-right.png" class="bottom-right" alt="Floral Bottom Right">
+            <img src="floral-top-left.png" class="top-left" alt="Floral Top Left">
+            <img src="floral-top-right.png" class="top-right" alt="Floral Top Right">
+            <img src="floral-bottom-left.png" class="bottom-left" alt="Floral Bottom Left">
+            <img src="floral-bottom-right.png" class="bottom-right" alt="Floral Bottom Right">
         </div>
         <div class="traditional-malay">
-            <img src="https://example.com/traditional-malay-top.png" class="top" alt="Traditional Malay Top">
-            <img src="https://example.com/traditional-malay-bottom.png" class="bottom" alt="Traditional Malay Bottom">
+            <img src="traditional-malay-top.png" class="top" alt="Traditional Malay Top">
+            <img src="traditional-malay-bottom.png" class="bottom" alt="Traditional Malay Bottom">
         </div>
         <div class="logo">
-            <img src="https://example.com/logo.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <h1>Aini & Amir</h1>
         <p class="date">
-            <img src="https://img.icons8.com/ios-filled/50/800000/calendar.png" alt="Date Icon">
+            <img src="calendar.png" alt="Date Icon">
             25.05.2025
         </p>
         <p class="venue">
-            <img src="https://img.icons8.com/ios-filled/50/800000/marker.png" alt="Venue Icon">
+            <img src="marker.png" alt="Venue Icon">
             Johor
         </p>
         <div class="traditional-malay-image">
-            <img src="https://example.com/traditional-malay-image.jpg" alt="Traditional Malay Design" width="100%" style="border-radius: 10px;">
+            <img src="traditional-malay-image.jpg" alt="Traditional Malay Design" width="100%" style="border-radius: 10px;">
         </div>
         <p>We look forward to celebrating with you!</p>
         <div class="map-link">
             <p>Find us here:</p>
             <a href="https://www.google.com/maps/place/Johor" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/800000/google-maps.png" alt="Google Maps Icon">
+                <img src="google-maps.png" alt="Google Maps Icon">
                 Google Maps
             </a>
             <a href="https://www.waze.com/ul?ll=1.4927,103.7414&navigate=yes" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/800000/waze.png" alt="Waze Icon">
+                <img src="waze.png" alt="Waze Icon">
                 Waze
             </a>
         </div>
