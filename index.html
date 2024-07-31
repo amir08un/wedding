@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aini & Amir's Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            background: linear-gradient(to right, #f5e6e8, #f5e6e8);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,22 +18,17 @@
             overflow: hidden;
         }
         .card {
-            background: linear-gradient(to bottom right, #ffffff, #ffe5e5);
+            background: #fff;
             color: #333;
             border-radius: 15px;
-            padding: 30px;
-            max-width: 400px;
-            width: 90%;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transform: translateY(100%);
-            animation: slideUp 1s forwards, pulse 1.5s infinite;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            transition: transform 0.3s;
+            animation: fadeIn 1s ease-in-out;
         }
         .floral {
             position: absolute;
@@ -42,87 +37,68 @@
             top: 0;
             left: 0;
             pointer-events: none;
+            z-index: -1;
         }
         .floral img {
             position: absolute;
-            max-width: 150px;
+            max-width: 120px;
+            opacity: 0.6;
+            transition: transform 0.5s ease-in-out;
         }
         .floral img.top-left {
-            top: -20px;
-            left: -20px;
+            top: -10px;
+            left: -10px;
         }
         .floral img.top-right {
-            top: -20px;
-            right: -20px;
+            top: -10px;
+            right: -10px;
         }
         .floral img.bottom-left {
-            bottom: -20px;
-            left: -20px;
+            bottom: -10px;
+            left: -10px;
         }
         .floral img.bottom-right {
-            bottom: -20px;
-            right: -20px;
-        }
-        .traditional-malay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-        .traditional-malay img {
-            position: absolute;
-            max-width: 100px;
-        }
-        .traditional-malay img.top {
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fadeIn 1s forwards 0.5s;
-        }
-        .traditional-malay img.bottom {
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fadeIn 1s forwards 0.5s;
+            bottom: -10px;
+            right: -10px;
         }
         .logo img {
             border-radius: 50%;
             margin-bottom: 20px;
-            width: 80px;
-            animation: rotate 5s infinite linear;
+            width: 100px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: rotate 10s linear infinite;
         }
         .card h1 {
-            margin-top: 0;
-            font-size: 2.5em;
-            font-weight: 600;
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Great Vibes', cursive;
             color: #800000;
+            animation: slideIn 1s ease-out;
         }
-        .card p {
-            font-size: 1.1em;
+        .card h2 {
             margin: 10px 0;
-            color: #666;
+            font-size: 1.2em;
+            color: #800000;
+            font-weight: 400;
+            animation: fadeIn 2s ease-in-out;
         }
         .date, .venue {
             margin: 20px 0;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.2em;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
         }
         .date img, .venue img, .map-link img {
-            margin-right: 10px;
+            margin-bottom: 10px;
             width: 24px;
         }
         .map-link {
             margin-top: 30px;
             font-size: 1em;
-            opacity: 0;
-            animation: fadeIn 1s forwards 1s;
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: fadeIn 2s ease-in-out;
         }
         .map-link a {
             color: #800000;
@@ -130,85 +106,79 @@
             display: flex;
             align-items: center;
             margin: 10px 0;
+            transition: color 0.3s ease;
         }
         .map-link a:hover {
             text-decoration: underline;
+            color: #a52a2a;
         }
         .footer {
             margin-top: 30px;
             font-size: 0.9em;
-            opacity: 0;
-            animation: fadeIn 1s forwards 1.5s;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
         }
         .footer a {
             color: #800000;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .footer a:hover {
             text-decoration: underline;
-        }
-        @keyframes slideUp {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            color: #a52a2a;
         }
         @keyframes fadeIn {
-            0% {
+            from {
                 opacity: 0;
             }
-            100% {
+            to {
                 opacity: 1;
             }
         }
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
             }
-            50% {
-                box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
         @keyframes rotate {
-            0% {
+            from {
                 transform: rotate(0deg);
             }
-            100% {
+            to {
                 transform: rotate(360deg);
             }
         }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .card {
-                max-width: 90%;
                 padding: 20px;
             }
             .card h1 {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+            .card h2 {
+                font-size: 1.1em;
             }
             .card p {
                 font-size: 1em;
             }
-            .logo img {
-                width: 60px;
-            }
         }
         @media (max-width: 480px) {
             .card {
-                max-width: 95%;
                 padding: 15px;
             }
             .card h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+            }
+            .card h2 {
+                font-size: 1em;
             }
             .card p {
                 font-size: 0.9em;
-            }
-            .logo img {
-                width: 50px;
             }
         }
     </style>
@@ -216,8 +186,8 @@
 <body>
     <div class="card">
         <div class="floral">
-            <img src="floral-top-left.png" class="top-left" alt="Floral Top Left">
-            <img src="floral-top-right.png" class="top-right" alt="Floral Top Right">
+            <img src="top left.png" class="top-left" alt="Floral Top Left">
+            <img src="top right.png" class="top-right" alt="Floral Top Right">
             <img src="floral left.png" class="bottom-left" alt="Floral Bottom Left">
             <img src="floral right.png" class="bottom-right" alt="Floral Bottom Right">
         </div>
@@ -225,27 +195,22 @@
             <img src="logo.png" alt="Logo">
         </div>
         <h1>Aini & Amir</h1>
-        <p class="date">
+        <h2>You're Invited to Our Wedding!</h2>
+        <div class="date">
             <img src="calendar.png" alt="Date Icon">
-            25.05.2025
-        </p>
-        <p class="venue">
-            <img src="marker.png" alt="Venue Icon">
-            Johor
-        </p>
-        <div class="traditional-malay-image">
-            <img src="traditional-malay-image.jpg" alt="Traditional Malay Design" width="100%" style="border-radius: 10px;">
+            <p>25.05.2025</p>
         </div>
-        <p>We look forward to celebrating with you!</p>
+        <div class="venue">
+            <img src="marker.png" alt="Venue Icon">
+            <p>Segamat, Johor</p>
+        </div>
         <div class="map-link">
             <p>Find us here:</p>
             <a href="https://www.google.com/maps/place/Johor" target="_blank">
-                <img src="google-maps.png" alt="Google Maps Icon">
-                Google Maps
+                <img src="google-maps.png" alt="Google Maps Icon"> Google Maps
             </a>
             <a href="https://www.waze.com/ul?ll=1.4927,103.7414&navigate=yes" target="_blank">
-                <img src="waze.png" alt="Waze Icon">
-                Waze
+                <img src="waze.png" alt="Waze Icon"> Waze
             </a>
         </div>
         <div class="footer">
